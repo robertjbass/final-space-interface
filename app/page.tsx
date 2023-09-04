@@ -1,14 +1,9 @@
+import LoadingSpinner from "@/app/components/LoadingSpinner";
+
 export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* characters: {characters.length}
-      <br />
-      episodes: {episodes.length}
-      <br />
-      locations: {locations.length}
-      <br />
-      quotes: {quotes.length}
-      <br /> */}
+    <main className="">
+      <LoadingSpinner />
     </main>
   );
 }

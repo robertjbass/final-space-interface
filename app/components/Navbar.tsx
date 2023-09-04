@@ -1,8 +1,12 @@
 import Link from "next/link";
+export const navbarHeight = 56;
 
 export default function Navbar() {
   return (
-    <nav className=" bg-gray-300 py-5 flex justify-center">
+    <nav
+      style={{ height: navbarHeight }}
+      className="bg-gray-300 flex justify-center"
+    >
       <ul className="flex flex-row justify-between items-center max-w-lg gap-4">
         <li>
           <Link href="/" className="hover:underline">
