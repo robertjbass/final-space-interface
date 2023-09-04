@@ -1,38 +1,23 @@
-"use client";
-import { useEffect, useState } from "react";
-import { getTodos } from "@/app/utils/todoService";
+import { Episode, Location, Quote } from "@/app/types";
+import { Character } from "@/app/types";
+import { fetchData } from "@/app/fetchData";
 
-type Todo = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: Boolean;
-} | null;
-
-export default function Home() {
-  const [todos, setTodos] = useState<Todo[]>([]);
-
-  const fetchTodoHandler = async () => {
-    const t: Todo[] = await getTodos();
-
-    setTodos(t);
-  };
-
-  useEffect(() => {
-    fetchTodoHandler();
-  }, []);
+export default async function Home() {
+  const characters = await fetchData<Character>("character");
+  const episodes = await fetchData<Episode>("episode");
+  const locations = await fetchData<Location>("location");
+  const quotes = await fetchData<Quote>("quote");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {todos.length ? (
-        <ul>
-          {todos?.map((todo: any) => (
-            <li key={todo.id}>{todo.title}</li>
-          ))}
-        </ul>
-      ) : (
-        <div>loading...</div>
-      )}
+      characters: {characters.length}
+      <br />
+      episodes: {episodes.length}
+      <br />
+      locations: {locations.length}
+      <br />
+      quotes: {quotes.length}
+      <br />
     </main>
   );
 }
