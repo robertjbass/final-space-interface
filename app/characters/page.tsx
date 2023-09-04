@@ -1,3 +1,7 @@
-export default function Characters() {
-  return <h1>CHARACTERS</h1>;
+import { Character } from "@/app/types";
+import { fetchData } from "@/app/utils/fetchData";
+
+export default async function Characters() {
+  const characters = await fetchData<Character>("character");
+  return <h1>CHARACTERS {characters.length}</h1>;
 }
