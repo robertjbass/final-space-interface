@@ -1,3 +1,4 @@
+import Container from "@/app/components/Container";
 import Navbar from "@/app/components/Navbar";
 import { GlobalProvider } from "@/app/context/GlobalContext";
 import "@/app/globals.css";
@@ -21,7 +22,7 @@ export default function RootLayout({
       <body className={rubik.className}>
         <GlobalProvider>
           <Navbar />
-          {children}
+          <Container>{children}</Container>
         </GlobalProvider>
       </body>
     </html>
