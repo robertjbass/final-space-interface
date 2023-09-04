@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { navbarHeight } from "@/app/components/Navbar";
 
 export default function LoadingSpinner() {
   return (
     <div
-      style={{ minHeight: `calc(100dvh - ${navbarHeight}px)` }}
+      // style={{ minHeight: `calc(100dvh - ${navbarHeight}vh)` }}
       className="flex justify-center items-center"
     >
       <Image
