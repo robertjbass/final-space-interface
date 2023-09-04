@@ -1,9 +1,20 @@
-import LoadingSpinner from "@/app/components/LoadingSpinner";
+"use client";
 
-export default async function Home() {
+import { useContext, useEffect } from "react";
+import { GlobalContext } from "@/app/context/GlobalContext";
+
+export default function Home() {
+  const { user, setUser } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setUser({ id: 123, email: "bob@bbass.co" });
+  }, []);
+
   return (
-    <main className="">
-      <LoadingSpinner />
+    <main>
+      <code>
+        <pre>{JSON.stringify(user, null, 2)}</pre>
+      </code>
     </main>
   );
 }
