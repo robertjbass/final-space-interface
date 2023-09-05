@@ -2,20 +2,25 @@
 
 import Menu from "@/app/components/Menu";
 import Search from "@/app/components/Search";
-
 import Container from "@/app/components/ui/Container";
-import { Bars4Icon, HeartIcon } from "@heroicons/react/24/outline";
+import { Bars4Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+
+// export const navbarHeight = 10;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((state) => !state);
+
   return (
     <>
-      <nav className="h-[12vh] bg-white flex items-center border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-10">
+      <nav
+        // style={{ height: navbarHeight }}
+        className="bg-white flex items-center border-b-[1px] border-slate-300 h-[12vh] fixed top-0 left-0 w-full z-10"
+      >
         <Container className="flex justify-between items-center gap-4">
           <Image
             src="/assets/final-space-logo.png"
@@ -25,12 +30,7 @@ export default function Navbar() {
           />
 
           <div className="flex w-full justify-center items-center ">
-            <div className="flex items-center gap-4">
-              <Search />
-              <div className="rounded-md border border-slate-300 p-1 hover:border-slate-500">
-                <HeartIcon className="w-6 h-6 text-slate-400 cursor-pointer" />
-              </div>
-            </div>
+            <Search />
 
             <ul className="gap-4 hidden w-fit mx-auto text-slate-500 font-light md-2:flex md-2:-order-1">
               <li>
