@@ -8,6 +8,7 @@ type Props = {
   subTitle: string;
   text: string;
 };
+
 const Card = (props: Props) => {
   const { url, src, title, subTitle, text } = props;
   return (
@@ -20,11 +21,13 @@ const Card = (props: Props) => {
         width={200}
         height={200}
         alt={title}
-        className="rounded-lg mb-4"
+        placeholder="blur"
+        blurDataURL={src}
+        className="rounded-lg mb-4 h-40 object-cover"
       />
       <h2 className="font-medium text-lg truncate ">{title}</h2>
       <p className="font-normal truncate">{subTitle}</p>
-      <p className=" font-light">{text}</p>
+      {text && <p className=" font-light">{text}</p>}
     </Link>
   );
 };
