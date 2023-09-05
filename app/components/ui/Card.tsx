@@ -11,11 +11,10 @@ type Props = {
 
 const Card = (props: Props) => {
   const { url, src, title, subTitle, text } = props;
-
   return (
     <Link
       href={url}
-      className="rounded-xl bg-indigo-100 w-[250px] p-8 border border-indigo-300"
+      className="rounded-xl bg-indigo-100 w-[260px] p-8 border border-indigo-300"
     >
       <Image
         src={src}
@@ -26,10 +25,9 @@ const Card = (props: Props) => {
         blurDataURL={src}
         className="rounded-lg mb-4 h-40 object-cover"
       />
-
       <h2 className="font-medium text-lg truncate ">{title}</h2>
       <p className="font-normal truncate">{subTitle}</p>
-      {text && <p className="font-light">{text}</p>}
+      {text && <p className=" font-light">{text}</p>}
     </Link>
   );
 };

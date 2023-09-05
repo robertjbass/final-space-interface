@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function LoadingSpinner() {
   return (
     <div
-      style={{ minHeight: `calc(90dvh - 12vh)` }}
+      // style={{ minHeight: `calc(100dvh - ${navbarHeight}vh)` }}
       className="flex justify-center items-center"
     >
       <Image

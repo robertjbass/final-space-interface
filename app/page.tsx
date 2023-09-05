@@ -1,8 +1,7 @@
 "use client";
 
-import LoadingSpinner from "@/app/components/LoadingSpinner";
-import { GlobalContext } from "@/app/context/GlobalContext";
 import { useContext, useEffect } from "react";
+import { GlobalContext } from "@/app/context/GlobalContext";
 
 export default function Home() {
   const { user, setUser } = useContext(GlobalContext);
@@ -13,10 +12,9 @@ export default function Home() {
 
   return (
     <main>
-      <LoadingSpinner />
-      {/* <code>
+      <code>
         <pre>{JSON.stringify(user, null, 2)}</pre>
-      </code> */}
+      </code>
     </main>
   );
 }

@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+// export const navbarHeight = 10;
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,7 +17,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="h-[12vh] bg-white flex items-center border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-10">
+      <nav
+        // style={{ height: navbarHeight }}
+        className="bg-white flex items-center border-b-[1px] border-slate-300 h-[12vh] fixed top-0 left-0 w-full z-10"
+      >
         <Container className="flex justify-between items-center gap-4">
           <Image
             src="/assets/final-space-logo.png"
