@@ -1,10 +1,10 @@
 "use client";
 
-import Container from "@/app/components/ui/Container";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
+import Container from "./ui/Container";
 
 type Props = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -14,7 +14,7 @@ const Menu = (props: Props) => {
   const handleClose = () => props.setIsOpen(false);
 
   return (
-    <div className="h-screen w-full absolute top-0 left-0 bg-white z-20">
+    <div className="h-screen w-full fixed top-0 left-0 bg-white z-20">
       <div className="border-b-[1px] border-slate-300 h-[12vh] flex justify-between items-center ">
         <Container className="flex justify-between items-center">
           <Image
