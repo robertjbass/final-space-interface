@@ -1,10 +1,10 @@
 "use client";
 
+import Container from "@/app/components/ui/Container";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import Container from "./ui/Container";
 
 type Props = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;

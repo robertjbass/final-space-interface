@@ -2,6 +2,7 @@
 
 import Menu from "@/app/components/Menu";
 import Search from "@/app/components/Search";
+
 import Container from "@/app/components/ui/Container";
 import { Bars4Icon, HeartIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -12,7 +13,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((state) => !state);
-
   return (
     <Fragment>
       <nav className="h-[12vh] bg-white flex items-center border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-10">
