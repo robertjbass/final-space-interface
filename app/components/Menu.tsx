@@ -14,8 +14,8 @@ const Menu = (props: Props) => {
   const handleClose = () => props.setIsOpen(false);
 
   return (
-    <div className="h-screen w-full absolute top-0 left-0 bg-white ">
-      <div className="border-b-[1px] border-slate-300 h-[10vh] flex justify-between items-center ">
+    <div className="h-screen w-full absolute top-0 left-0 bg-white z-20">
+      <div className="border-b-[1px] border-slate-300 h-[12vh] flex justify-between items-center ">
         <Container className="flex justify-between items-center">
           <Image
             src="/assets/final-space-logo.png"
