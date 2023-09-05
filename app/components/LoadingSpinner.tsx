@@ -2,10 +2,7 @@ import Image from "next/image";
 
 export default function LoadingSpinner() {
   return (
-    <div
-      style={{ minHeight: `calc(90dvh - 12vh)` }}
-      className="flex justify-center items-center"
-    >
+    <div className="flex justify-center items-center">
       <Image
         className="m-auto"
         src="/assets/loading.svg"
