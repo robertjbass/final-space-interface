@@ -7,14 +7,14 @@ import Container from "@/app/components/ui/Container";
 import { Bars4Icon, HeartIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((state) => !state);
   return (
-    <>
+    <Fragment>
       <nav className="h-[12vh] bg-white flex items-center border-b-[1px] border-slate-300 fixed top-0 left-0 w-full z-10">
         <Container className="flex justify-between items-center gap-4">
           <Image
@@ -75,6 +75,6 @@ export default function Navbar() {
         </Container>
       </nav>
       {isOpen && <Menu setIsOpen={setIsOpen} />}
-    </>
+    </Fragment>
   );
 }
