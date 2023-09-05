@@ -6,10 +6,9 @@ type Props = {
 };
 
 const Container = (props: Props) => {
-  const { children, className } = props;
   return (
-    <div className={`w-[85%]  my-0 mx-auto  ${className ?? ""} md:w-[90%]`}>
-      {children}
+    <div className={` w-[90%] mx-auto max-w-7xl ${props.className ?? ""}`}>
+      {props.children}
     </div>
   );
 };

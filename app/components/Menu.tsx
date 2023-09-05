@@ -4,7 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import Container from "./ui/Container";
+import Container from "./Container";
 
 type Props = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;

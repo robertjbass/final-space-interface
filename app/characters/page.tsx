@@ -1,21 +1,30 @@
-import Card from "@/app/components/ui/Card";
 import { Character } from "@/app/types";
 import { fetchData } from "@/app/utils/fetchData";
+import Link from "next/link";
+import Image from "next/image";
 
 export default async function Characters() {
   const characters = await fetchData<Character>("character");
   return (
     <>
-      <div className="grid grid-flow-row gap-8 place-items-center grid-cols-1 xs:grid-cols-2 xs:gap-16 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-4">
+      <h1>CHARACTERS {characters.length}</h1>
+      <div className="grid grid-flow-row grid-cols-3 gap-8 place-items-center">
         {characters.map((character) => (
-          <Card
-            url={`/characters/${character.id}`}
-            src={character.img_url}
-            title={character.name}
-            subTitle={character.species}
-            text={character.origin}
+          <Link
+            href={`/characters/${character.id}`}
+            className="col-span-1 bg-blue-200 w-fit p-8"
             key={character.id}
-          ></Card>
+          >
+            <Image
+              src={character.img_url}
+              width={200}
+              height={200}
+              alt={character.name}
+            />
+
+            <h2>{character.name}</h2>
+            <p>{character.origin}</p>
+          </Link>
         ))}
       </div>
     </>
