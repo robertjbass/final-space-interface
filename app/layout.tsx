@@ -1,5 +1,5 @@
-import Container from "@/app/components/Container";
 import Navbar from "@/app/components/Navbar";
+import Container from "@/app/components/ui/Container";
 import { GlobalProvider } from "@/app/context/GlobalContext";
 import "@/app/globals.css";
 import type { Metadata } from "next";
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={rubik.className}>
         <GlobalProvider>
           <Navbar />
-          <Container>{children}</Container>
+          <Container className="py-8">{children}</Container>
         </GlobalProvider>
       </body>
     </html>

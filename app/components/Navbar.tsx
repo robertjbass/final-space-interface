@@ -1,7 +1,7 @@
 "use client";
 
-import Container from "@/app/components/Container";
 import Menu from "@/app/components/Menu";
+import Container from "@/app/components/ui/Container";
 import { Bars4Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
