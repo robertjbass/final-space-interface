@@ -22,7 +22,9 @@ export default function RootLayout({
       <body className={rubik.className}>
         <GlobalProvider>
           <Navbar />
-          <Container className="py-8">{children}</Container>
+          <Container className="py-8 relative top-[12vh] left-0">
+            {children}
+          </Container>
         </GlobalProvider>
       </body>
     </html>
