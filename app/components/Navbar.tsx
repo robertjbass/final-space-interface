@@ -1,37 +1,39 @@
-"use client";
-
-import Menu from "@/app/components/Menu";
-import { Bars4Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
-import { useState } from "react";
-
-// export const navbarHeight = 10;
+import Link from "next/link";
+export const navbarHeight = 56;
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen((state) => !state);
-
-  const Icon = isOpen ? XMarkIcon : Bars4Icon;
-
   return (
-    <>
-      <nav
-        // style={{ height: navbarHeight }}
-        className="bg-white flex items-center border-b-[1px] border-slate-300 h-[10vh]"
-      >
-        <ul className="flex justify-between items-center px-4 w-full">
-          <Image
-            src="/assets/final-space-logo.png"
-            width={60}
-            height={60}
-            alt="Logo"
-          />
-
-          <Icon className="h-6 w-6 cursor-pointer" onClick={toggleMenu} />
-        </ul>
-      </nav>
-      {isOpen && <Menu />}
-    </>
+    <nav
+      style={{ height: navbarHeight }}
+      className="bg-gray-300 flex justify-center"
+    >
+      <ul className="flex flex-row justify-between items-center max-w-lg gap-4">
+        <li>
+          <Link href="/" className="hover:underline">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="/characters" className="hover:underline">
+            Characters
+          </Link>
+        </li>
+        <li>
+          <Link href="/episodes" className="hover:underline">
+            Episodes
+          </Link>
+        </li>
+        <li>
+          <Link href="/locations" className="hover:underline">
+            Locations
+          </Link>
+        </li>
+        <li>
+          <Link href="/quotes" className="hover:underline">
+            Quotes
+          </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
