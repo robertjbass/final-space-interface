@@ -3,7 +3,7 @@
 import Menu from "@/app/components/Menu";
 import Search from "@/app/components/Search";
 import Container from "@/app/components/ui/Container";
-import { Bars4Icon } from "@heroicons/react/24/outline";
+import { Bars4Icon, HeartIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -25,17 +25,14 @@ export default function Navbar() {
           />
 
           <div className="flex w-full justify-center items-center ">
-            <Search />
+            <div className="flex items-center gap-4">
+              <Search />
+              <div className="rounded-md border border-slate-300 p-1 hover:border-slate-500">
+                <HeartIcon className="w-6 h-6 text-slate-400 cursor-pointer" />
+              </div>
+            </div>
 
             <ul className="gap-4 hidden w-fit mx-auto text-slate-500 font-light md-2:flex md-2:-order-1">
-              <li>
-                <Link
-                  href="/"
-                  className="hover:underline hover:text-slate-700 "
-                >
-                  Home
-                </Link>
-              </li>
               <li>
                 <Link
                   href="/characters"

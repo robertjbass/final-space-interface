@@ -31,11 +31,6 @@ const Menu = (props: Props) => {
       <Container className="grid place-items-center content-center h-[90vh]">
         <ul className="flex flex-col text-center gap-2">
           <li>
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-          </li>
-          <li>
             <Link href="/characters" className="hover:underline">
               Characters
             </Link>
