@@ -14,7 +14,7 @@ const Card = (props: Props) => {
   return (
     <Link
       href={url}
-      className="rounded-xl bg-indigo-100 w-[260px] p-8 border border-indigo-300"
+      className="rounded-xl bg-indigo-100 w-[260px] p-8 border border-indigo-300 min-h-[320px]"
     >
       <Image
         src={src}

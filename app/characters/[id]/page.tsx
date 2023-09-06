@@ -36,7 +36,7 @@ export default async function Character({
           <div className="flex gap-4 flex-wrap">
             {character.alias.map((alias, index) => {
               const bracket = alias.indexOf("(");
-              alias = alias.slice(0, bracket);
+              alias = bracket !== -1 ? alias.slice(0, bracket) : alias;
               return (
                 <p
                   key={index}
