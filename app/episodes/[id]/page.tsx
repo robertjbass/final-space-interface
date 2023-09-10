@@ -39,7 +39,7 @@ export default async function Episode({ params }: { params: { id: string } }) {
 
       <article>
         <h1 className="font-medium text-2xl truncate mb-4">
-          Episode {params.id} Characters{" "}
+          Episode {params.id} Characters
         </h1>
         <Grid>
           {characters.map((character) => (
