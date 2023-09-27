@@ -13,7 +13,7 @@ export default async function Episodes() {
           url={`episodes/${episode.id}`}
           src={episode.img_url}
           title={episode.name}
-          subTitle={episode.air_date}
+          subTitle={new Date(episode.air_date).toDateString().slice(4)}
           text={`Characters: ${episode.characters.length}`}
           key={episode.id}
         />

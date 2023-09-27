@@ -3,11 +3,37 @@ import Grid from "@/app/components/ui/Grid";
 import { Character } from "@/app/types";
 import { fetchData } from "@/app/utils/fetchData";
 
-export default async function Characters() {
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function Characters(props: Props) {
   const characters = await fetchData<Character>("character");
+  const { query } = props.searchParams;
+
+  const filterCharacters = function (character: Character, query: string) {
+    return (
+      character.name?.toLowerCase().includes(query.toLowerCase()) ||
+      character.species?.toLowerCase().includes(query.toLowerCase()) ||
+      character.origin?.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
+  const results = (() => {
+    if (!query) return characters;
+
+    return characters.filter((character) => {
+      return filterCharacters(character, query as string);
+    });
+  })();
+
+  if (!results.length) {
+    return <p>No results</p>;
+  }
+
   return (
     <Grid>
-      {characters.map((character) => (
+      {results.map((character) => (
         <Card
           url={`/characters/${character.id}`}
           src={character.img_url}
