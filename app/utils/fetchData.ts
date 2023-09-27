@@ -13,7 +13,7 @@ export const fetchData = async <T extends EndpointType>(
 export const fetchDataById = async <T extends EndpointType>(
   endpointName: EndpointName,
   id: number
-): Promise<T[]> => {
+): Promise<T> => {
   const response = await fetch(
     `https://finalspaceapi.com/api/v0/${endpointName}/${id}`
   );

@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
+      <body className={`${rubik.className} overflow-x-hidden`}>
         <GlobalProvider>
           <Navbar />
-          <Container className="py-8 relative top-[12vh] left-0">
+          <Container className="py-8 relative top-[12vh] left-0 overflow-x-hidden">
             {children}
           </Container>
         </GlobalProvider>

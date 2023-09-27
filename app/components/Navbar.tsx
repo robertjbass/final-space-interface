@@ -22,12 +22,14 @@ export default function Navbar() {
         className="bg-white flex items-center border-b-[1px] border-slate-300 h-[12vh] fixed top-0 left-0 w-full z-10"
       >
         <Container className="flex justify-between items-center gap-4">
-          <Image
-            src="/assets/final-space-logo.png"
-            width={60}
-            height={60}
-            alt="Logo"
-          />
+          <Link href="/">
+            <Image
+              src="/assets/final-space-logo.png"
+              width={60}
+              height={60}
+              alt="Logo"
+            />
+          </Link>
 
           <div className="flex w-full justify-center items-center ">
             <Search />
