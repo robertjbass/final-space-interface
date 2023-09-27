@@ -6,7 +6,7 @@ type Props = {
   src: string;
   title: string;
   subTitle: string;
-  text: string;
+  text?: string;
 };
 
 const Card = (props: Props) => {
